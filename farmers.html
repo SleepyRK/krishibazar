@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Farmers — Banglar Krishi Bazar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- DISCLAIMER BANNER -->
+  <div class="disclaimer-banner">
+    &#9888; This platform does NOT handle payment or delivery. Please contact farmers directly.
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">&#127807;</span>
+        Banglar Krishi Bazar
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" data-testid="button-hamburger">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" data-testid="link-home">Home</a></li>
+        <li><a href="index.html#products" data-testid="link-products">Products</a></li>
+        <li><a href="farmers.html" class="nav-active" data-testid="link-farmers">Meet Our Farmers</a></li>
+        <li>
+          <a href="#" id="cart-nav-btn" data-testid="button-cart-nav">
+            &#128722; Cart <span class="cart-count" id="cart-count">0</span>
+          </a>
+        </li>
+        <li><a href="index.html#join" data-testid="link-join">Join as Farmer</a></li>
+        <li><a href="index.html#contact" data-testid="link-contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>&#128119; Meet Our Farmers</h1>
+      <p class="page-hero-sub"><strong class="page-hero-tagline">Meet the hands that feed the nation.</strong></p>
+      <p>The real people behind your food — hardworking farmers across Bangladesh</p>
+    </div>
+  </section>
+
+  <!-- FARMERS LIST (rendered by JS below) -->
+  <section class="farmers-page" id="farmers-page">
+    <div class="container">
+      <div id="farmers-list"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-icon">&#127807;</span>
+          <strong>Banglar Krishi Bazar</strong>
+          <p>Connecting farmers and customers directly — no middlemen.</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#products">Products</a>
+          <a href="farmers.html">Meet Our Farmers</a>
+          <a href="index.html#join">Join as Farmer</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2026 Banglar Krishi Bazar. This platform does NOT handle payments or delivery.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART MODAL (shared) -->
+  <div class="modal-overlay" id="cart-overlay" data-testid="cart-overlay">
+    <div class="modal cart-modal">
+      <div class="modal-header">
+        <h2>&#128722; Your Cart</h2>
+        <button class="close-btn" id="close-cart" data-testid="button-close-cart">&times;</button>
+      </div>
+      <div class="disclaimer-box">
+        &#9888; This platform does NOT handle payment or delivery. Please contact farmers directly.
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-footer" id="cart-footer"></div>
+    </div>
+  </div>
+
+  <!-- FARMER MODAL (shared) -->
+  <div class="modal-overlay" id="farmer-overlay" data-testid="farmer-overlay">
+    <div class="modal farmer-modal">
+      <div class="modal-header">
+        <h2>&#128119; Farmer Details</h2>
+        <button class="close-btn" id="close-farmer" data-testid="button-close-farmer">&times;</button>
+      </div>
+      <div class="disclaimer-box">
+        &#9888; Call or message the farmer to purchase directly. We do NOT handle payments or delivery.
+      </div>
+      <div id="farmer-details"></div>
+    </div>
+  </div>
+
+  <!-- MULTI-FARMER MODAL (shared) -->
+  <div class="modal-overlay" id="multi-farmer-overlay" data-testid="multi-farmer-overlay">
+    <div class="modal farmer-modal">
+      <div class="modal-header">
+        <h2>&#128119; Farmers for Your Cart Items</h2>
+        <button class="close-btn" id="close-multi-farmer" data-testid="button-close-multi-farmer">&times;</button>
+      </div>
+      <div class="disclaimer-box">
+        &#9888; This platform does NOT handle payment or delivery. Please contact each farmer directly.
+      </div>
+      <div id="multi-farmer-details"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- Load shared script -->
+  <script src="script.js"></script>
+
+  <!-- Farmers page specific rendering -->
+  <script>
+    function renderFarmersPage() {
+      const list = document.getElementById("farmers-list");
+      if (!list) return;
+
+      list.innerHTML = products.map(p => {
+        const f = p.farmer;
+        const initials = f.name.split(" ").map(w => w[0]).join("").toUpperCase();
+        const fi = getFreshnessInfo(p.freshness);
+        const savePct = savings(p);
+
+        return `
+          <div class="farmer-profile-card" id="farmer-${p.id}" data-testid="farmer-profile-${p.id}">
+            <!-- Farmer Info -->
+            <div class="fp-header">
+              <div class="fp-avatar">${initials}</div>
+              <div class="fp-info">
+                <h2 class="fp-name">${f.name}</h2>
+                <div class="fp-meta">
+                  <span>&#128205; ${f.village}, ${f.district}</span>
+                  <span>&#9203; ${f.experience} of experience</span>
+                </div>
+                <div class="fp-phone">&#128222; ${f.phone}</div>
+                <p class="fp-description">${f.description}</p>
+              </div>
+            </div>
+
+            <!-- Farmer's Products -->
+            <div class="fp-products">
+              <h3 class="fp-products-title">Products by ${f.name}</h3>
+              <div class="fp-product-row">
+                <div class="fp-product-item" data-testid="fp-product-${p.id}">
+                  <div class="fp-prod-top">
+                    <span class="fp-prod-icon">${p.icon}</span>
+                    ${p.sponsored ? '<span class="sponsored-tag">Sponsored</span>' : ''}
+                    ${p.season ? '<span class="season-tag">In Season</span>' : ''}
+                  </div>
+                  <div class="fp-prod-name">${p.name}</div>
+                  <div class="fp-prod-price">
+                    <span class="fp-price">৳${p.price}</span>
+                    <span class="fp-market">৳${p.marketPrice}</span>
+                    <span class="fp-save">Save ${savePct}%</span>
+                  </div>
+                  <span class="freshness-label ${fi.cls}">&#9679; ${fi.label} — ${p.freshness}</span>
+                  <div class="fp-prod-actions">
+                    <button class="btn btn-primary btn-sm" onclick="addToCart(${p.id})" data-testid="fp-add-cart-${p.id}">
+                      + Add to Cart
+                    </button>
+                    <button class="btn btn-outline btn-sm" onclick="openFarmerModal(${p.id})" data-testid="fp-contact-${p.id}">
+                      Contact Us
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="fp-disclaimer">
+              &#9888; Contact this farmer directly to purchase. No payment or delivery handled here.
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      // After rendering, scroll to anchor if URL has #farmer-X
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          const el = document.querySelector(hash);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+
+    renderFarmersPage();
+  </script>
+</body>
+</html>
