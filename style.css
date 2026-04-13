@@ -1,24 +1,26 @@
 /* ========================================
    CSS VARIABLES — Change colors/fonts here
+   ► To switch theme: edit the values below,
+     everything on the site updates instantly.
    ======================================== */
 :root {
-  --primary-color: #2e7d32;
-  --primary-dark: #1b5e20;
-  --primary-light: #4caf50;
-  --secondary-color: #f1f8e9;
-  --accent-color: #ff9800;
-  --accent-dark: #e65100;
-  --text-dark: #1a1a1a;
-  --text-mid: #444;
-  --text-light: #777;
-  --bg-white: #ffffff;
-  --bg-light: #f9fbe7;
-  --bg-warm: #fff8f0;
-  --border-color: #dcedc8;
-  --font-main: Arial, sans-serif;
+  --primary-color: #22c55e;       /* emerald green — buttons, links, badges  */
+  --primary-dark: #16a34a;        /* deeper emerald — hover, footer          */
+  --primary-light: #4ade80;       /* light emerald — soft accents            */
+  --secondary-color: #1e293b;     /* slate — secondary backgrounds           */
+  --accent-color: #f59e0b;        /* amber — sponsored badges, CTA buttons   */
+  --accent-dark: #d97706;         /* darker amber — hover                    */
+  --text-dark: #f1f5f9;           /* near-white — headings                   */
+  --text-mid: #cbd5e1;            /* light slate — body text                 */
+  --text-light: #94a3b8;          /* muted slate — secondary labels          */
+  --bg-white: #1e293b;            /* card / modal background                 */
+  --bg-light: #0f172a;            /* deep section background                 */
+  --bg-warm: #111827;             /* alternate section background            */
+  --border-color: #334155;        /* subtle slate border                     */
+  --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --border-radius: 8px;
-  --shadow: 0 2px 12px rgba(0,0,0,0.08);
-  --shadow-hover: 0 6px 24px rgba(0,0,0,0.14);
+  --shadow: 0 2px 12px rgba(0,0,0,0.55);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.70);
   --transition: 0.25s ease;
 }
 
@@ -38,7 +40,7 @@ html {
 body {
   font-family: var(--font-main);
   color: var(--text-dark);
-  background: var(--bg-white);
+  background: #0f172a;
   line-height: 1.6;
 }
 
@@ -67,7 +69,7 @@ img {
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary-color);
   margin-bottom: 8px;
   text-align: center;
 }
@@ -148,8 +150,8 @@ img {
    DISCLAIMER BANNER
    ======================================== */
 .disclaimer-banner {
-  background: #1a3a5c;
-  color: #d6eaff;
+  background: #060d1a;
+  color: #4ade80;
   text-align: center;
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -247,7 +249,7 @@ img {
    HERO SECTION
    ======================================== */
 .hero {
-  background: linear-gradient(135deg, var(--secondary-color) 0%, #e8f5e9 60%, #fff8e1 100%);
+  background: linear-gradient(135deg, #060d1a 0%, #0c1527 50%, #0a1f18 100%);
   padding: 100px 20px 80px;
   text-align: center;
   position: relative;
@@ -338,7 +340,7 @@ img {
 }
 
 .seasonal-card {
-  background: #fff;
+  background: var(--bg-white);
   border-radius: var(--border-radius);
   padding: 20px;
   text-align: center;
@@ -457,7 +459,7 @@ img {
 }
 
 .card-top {
-  background: linear-gradient(135deg, var(--secondary-color), #e8f5e9);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   padding: 28px 20px 14px;
   position: relative;
   text-align: center;
@@ -592,9 +594,16 @@ img {
   background: var(--bg-white);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-light);
+  opacity: 1;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
 }
 
 .form-group textarea {
@@ -651,8 +660,8 @@ img {
    FOOTER
    ======================================== */
 .footer {
-  background: var(--primary-dark);
-  color: #c8e6c9;
+  background: #0a1628;
+  color: #cbd5e1;
   padding: 48px 0 20px;
 }
 
@@ -693,7 +702,7 @@ img {
 }
 
 .footer-links a {
-  color: #a5d6a7;
+  color: #94a3b8;
   font-size: 0.9rem;
   transition: color var(--transition);
 }
@@ -703,11 +712,11 @@ img {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.10);
   padding-top: 20px;
   font-size: 0.82rem;
   text-align: center;
-  color: #81c784;
+  color: #64748b;
 }
 
 /* ========================================
@@ -774,11 +783,11 @@ img {
 
 .disclaimer-box {
   margin: 14px 24px;
-  background: #fff8e1;
+  background: #1c1407;
   border-left: 4px solid var(--accent-color);
   padding: 10px 14px;
   font-size: 0.85rem;
-  color: #7b5800;
+  color: #fcd34d;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
@@ -1060,30 +1069,30 @@ img {
 }
 
 .fresh-green {
-  background: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
+  background: #052e16;
+  color: #4ade80;
+  border: 1px solid #166534;
 }
 
 .fresh-yellow {
-  background: #fff8e1;
-  color: #f57f17;
-  border: 1px solid #ffe082;
+  background: #1c1407;
+  color: #fbbf24;
+  border: 1px solid #92400e;
 }
 
 .fresh-red {
-  background: #fce4ec;
-  color: #b71c1c;
-  border: 1px solid #f48fb1;
+  background: #1c0a0a;
+  color: #f87171;
+  border: 1px solid #991b1b;
 }
 
 /* ========================================
    SPONSORED SECTION (now inline inside #products)
    ======================================== */
 .sponsored-inline {
-  background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
+  background: linear-gradient(135deg, #1c1407 0%, #221a05 100%);
   border-radius: 12px;
-  border: 2px solid #ffcc80;
+  border: 2px solid #78350f;
   padding: 32px 28px 28px;
   margin-bottom: 0;
 }
@@ -1106,30 +1115,30 @@ img {
 
 .sponsored-tag {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
   background: var(--accent-color);
   color: #fff;
-  font-size: 0.78rem;
-  font-weight: 800;
-  padding: 4px 11px 4px 8px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px 2px 6px;
   border-radius: 20px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   display: flex;
   align-items: center;
-  gap: 4px;
-  box-shadow: 0 2px 8px rgba(255,152,0,0.5);
+  gap: 3px;
+  box-shadow: 0 1px 5px rgba(245,158,11,0.4);
   z-index: 2;
 }
 
 .sponsored-star {
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   line-height: 1;
 }
 
 .is-sponsored {
-  border: 2px solid #ffcc80;
-  box-shadow: 0 4px 18px rgba(255,152,0,0.18);
+  border: 2px solid #fcd34d;
+  box-shadow: 0 4px 18px rgba(245,158,11,0.22);
 }
 
 .season-tag {
@@ -1183,7 +1192,7 @@ img {
    PAGE HERO (inner pages like farmers.html)
    ======================================== */
 .page-hero {
-  background: linear-gradient(135deg, var(--secondary-color), #e8f5e9);
+  background: linear-gradient(135deg, #060d1a, #0c1527);
   padding: 60px 20px 50px;
   text-align: center;
 }
@@ -1191,7 +1200,7 @@ img {
 .page-hero h1 {
   font-size: 2.4rem;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--text-dark);
   margin-bottom: 10px;
 }
 
@@ -1210,8 +1219,8 @@ img {
   display: inline-block;
   font-size: 1.55rem;
   font-weight: 900;
-  color: var(--primary-dark);
-  background: linear-gradient(90deg, var(--primary-color), #1b5e20);
+  color: var(--primary-color);
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1262,7 +1271,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 10px rgba(46,125,50,0.3);
+  box-shadow: 0 3px 10px rgba(22,163,74,0.4);
 }
 
 .fp-info {
@@ -1392,10 +1401,10 @@ img {
 /* Disclaimer in farmer profile */
 .fp-disclaimer {
   padding: 12px 28px;
-  background: #fff8e1;
-  border-top: 1px solid #ffe082;
+  background: #1c1407;
+  border-top: 1px solid #78350f;
   font-size: 0.82rem;
-  color: #7b5800;
+  color: #fcd34d;
 }
 
 @media (max-width: 600px) {
