@@ -1,14 +1,35 @@
 <!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  Banglar Krishi Bazar — index.html (Home Page)              ║
+  ║  Plain HTML · No framework · No backend                     ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  QUICK EDITS — Ctrl+F the arrow text to jump there:         ║
+  ║                                                              ║
+  ║  ► Browser tab title       → "SITE TITLE"                   ║
+  ║  ► Top warning banner      → "DISCLAIMER BANNER"            ║
+  ║  ► Hero headline & tagline → "HERO HEADLINE"                ║
+  ║  ► Hero button labels      → "HERO BUTTONS"                 ║
+  ║  ► Contact phone/email     → "CONTACT DETAILS"              ║
+  ║  ► Footer tagline          → "FOOTER TAGLINE"               ║
+  ║  ► Copyright year/text     → "COPYRIGHT"                    ║
+  ║                                                              ║
+  ║  Products & farmers    → script.js  › search "PRODUCT DATA" ║
+  ║  Button labels         → script.js  › search "BUTTON LABELS"║
+  ║  All colors & fonts    → style.css  › search "CSS VARIABLES"║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SITE TITLE — shows in browser tab -->
   <title>Banglar Krishi Bazar</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- DISCLAIMER BANNER -->
+  <!-- DISCLAIMER BANNER — edit the warning text below -->
   <div class="disclaimer-banner">
     &#9888; This platform does NOT handle payment or delivery. Please contact farmers directly.
   </div>
@@ -33,7 +54,7 @@
           </a>
         </li>
         <li><a href="#join" data-testid="link-join">Join as Farmer</a></li>
-        <li><a href="#contact" data-testid="link-contact">Contact</a></li>
+        <li><a href="#contact" data-testid="link-contact">Contact Us</a></li>
       </ul>
     </div>
   </nav>
@@ -41,8 +62,11 @@
   <!-- HERO SECTION -->
   <section class="hero" id="home">
     <div class="hero-content">
+      <!-- HERO HEADLINE — change the main headline text below -->
       <h1>Fresh Food Direct<br>from <span class="highlight">Farmers</span></h1>
+      <!-- HERO TAGLINE — change the subtitle below -->
       <p>No middleman, no hidden cost. Connect directly with the hands that grow your food.</p>
+      <!-- HERO BUTTONS — change button labels below -->
       <div class="hero-btn-group">
         <a href="#products" class="btn btn-primary" data-testid="button-browse-products">Browse Products &rarr;</a>
         <a href="farmers.html" class="btn btn-hero-farmers" data-testid="button-meet-farmers">&#128119; Meet Our Farmers</a>
@@ -131,20 +155,21 @@
       <h2 class="section-title">Contact Us</h2>
       <p class="section-subtitle">Have questions? Reach out to us.</p>
       <div class="contact-cards">
+        <!-- CONTACT DETAILS — change phone, email, location below -->
         <div class="contact-card">
           <div class="contact-icon">&#128222;</div>
           <h3>Phone</h3>
-          <p>01700-000000</p>
+          <p>01700-000000</p>          <!-- ← your phone number -->
         </div>
         <div class="contact-card">
           <div class="contact-icon">&#128140;</div>
           <h3>Email</h3>
-          <p>info@krishibazar.bd</p>
+          <p>info@krishibazar.bd</p>   <!-- ← your email address -->
         </div>
         <div class="contact-card">
           <div class="contact-icon">&#128205;</div>
           <h3>Location</h3>
-          <p>Dhaka, Bangladesh</p>
+          <p>Dhaka, Bangladesh</p>     <!-- ← your location -->
         </div>
       </div>
     </div>
@@ -156,6 +181,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <span class="logo-icon">&#127807;</span>
+          <!-- FOOTER TAGLINE — site name and short description -->
           <strong>Banglar Krishi Bazar</strong>
           <p>Connecting farmers and customers directly — no middlemen.</p>
         </div>
@@ -168,6 +194,7 @@
         </div>
       </div>
       <div class="footer-bottom">
+        <!-- COPYRIGHT — update year or text here -->
         <p>&#169; 2026 Banglar Krishi Bazar. This platform does NOT handle payments or delivery.</p>
       </div>
     </div>
