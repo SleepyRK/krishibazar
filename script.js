@@ -3,6 +3,15 @@
 //  Shared across index.html and farmers.html
 //  Pure JavaScript: no frameworks, no backend, no payments
 // ============================================================
+//
+//  ★ EASY EDITS — Ctrl+F the label to jump straight there:
+//
+//  ► Add / edit products        → search: "PRODUCT DATA"
+//  ► Change button labels       → search: "BUTTON LABELS"
+//  ► Freshness logic            → search: "FRESHNESS LABEL"
+//  ► Cart behaviour             → search: "CART —"
+//  ► Farmer modal content       → search: "FARMER MODAL"
+// ============================================================
 
 // ============================================================
 // PRODUCT DATA — edit this array to add/change products
@@ -264,6 +273,12 @@ function savings(p) {
 }
 
 // ============================================================
+// BUTTON LABELS — change card button text here
+// ============================================================
+const LABEL_ADD_TO_CART    = "+ Add to Cart";
+const LABEL_CONTACT_FARMER = "Contact Farmer";
+
+// ============================================================
 // PRODUCT CARD HTML BUILDER (reusable)
 // ============================================================
 function buildProductCard(p, showSponsoredBadge = false) {
@@ -294,12 +309,12 @@ function buildProductCard(p, showSponsoredBadge = false) {
           class="btn btn-primary btn-sm"
           onclick="addToCart(${p.id})"
           data-testid="button-add-cart-${p.id}"
-        >+ Add to Cart</button>
+        >${LABEL_ADD_TO_CART}</button>
         <button
           class="btn btn-outline btn-sm"
           onclick="openFarmerModal(${p.id})"
           data-testid="button-contact-farmer-${p.id}"
-        >Contact Us</button>
+        >${LABEL_CONTACT_FARMER}</button>
       </div>
     </div>
   `;
@@ -327,7 +342,7 @@ function renderSeasonal() {
       <div class="seasonal-badge">In Season</div>
       <div style="font-size:2.5rem">${p.icon}</div>
       <div class="s-name">${p.name}</div>
-      <div class="s-price">৳${p.price} <span style="font-size:0.8rem;color:#888;font-weight:400;text-decoration:line-through">৳${p.marketPrice}</span></div>
+      <div class="s-price">৳${p.price} <span style="font-size:0.8rem;color:#b0b0b0;font-weight:400;text-decoration:line-through">৳${p.marketPrice}</span></div>
       <span class="freshness-label ${fi_map[p.id].cls}" style="font-size:0.75rem;margin:6px 0">&#9679; ${fi_map[p.id].label}</span>
       <div class="s-farmer">
         <a href="farmers.html#farmer-${p.id}" class="farmer-name-link" onclick="event.stopPropagation()" data-testid="seasonal-farmer-link-${p.id}">${p.farmer.name}</a>
@@ -376,7 +391,7 @@ function renderProducts(districtFilter = "all") {
     : products.filter(p => p.farmer.district === districtFilter);
 
   if (filtered.length === 0) {
-    grid.innerHTML = `<p style="color:#888;text-align:center;grid-column:1/-1;padding:40px">No products found for this district.</p>`;
+    grid.innerHTML = `<p style="color:#b0b0b0;text-align:center;grid-column:1/-1;padding:40px">No products found for this district.</p>`;
     return;
   }
 
@@ -464,7 +479,7 @@ function openFarmerModal(productId) {
       <div class="farmer-info-row"><span>🌿</span><div>${f.description}</div></div>
       <div class="farmer-info-row"><span>⏳</span><div>Farming experience: <strong>${f.experience}</strong></div></div>
       <hr class="farmer-separator" />
-      <p style="font-size:0.85rem;color:#777;text-align:center">
+      <p style="font-size:0.85rem;color:#a5c8a0;text-align:center">
         Call or message the farmer to purchase directly.<br>
         <a href="farmers.html#farmer-${product.id}" style="color:var(--primary-color);font-weight:600">View full profile &rarr;</a>
       </p>
@@ -489,10 +504,10 @@ function openMultiFarmerModal() {
     const f = item.farmer;
     const initials = f.name.split(" ").map(w => w[0]).join("").toUpperCase();
     return `
-      <div class="farmer-card" style="border-bottom:1px solid #eee">
+      <div class="farmer-card" style="border-bottom:1px solid #1e4020">
         <div class="farmer-avatar" style="width:50px;height:50px;font-size:1.3rem">${initials}</div>
         <div class="farmer-name" style="font-size:1.1rem">${f.name}</div>
-        <p style="text-align:center;font-size:0.88rem;color:#555;margin-bottom:10px">for: <strong>${item.name}</strong></p>
+        <p style="text-align:center;font-size:0.88rem;color:#a5c8a0;margin-bottom:10px">for: <strong>${item.name}</strong></p>
         <div class="farmer-info-row"><span>📍</span><div>${f.village}, ${f.district}</div></div>
         <div class="farmer-info-row"><span>📞</span><div class="farmer-phone">${f.phone}</div></div>
       </div>
