@@ -4,7 +4,7 @@
      everything on the site updates instantly.
    ======================================== */
 :root {
-  --primary-color: mediumseagreen;       /* emerald green — buttons, links, badges  */
+  --primary-color: green;       /* emerald green — buttons, links, badges  */
   --primary-dark: seagreen;        /* deeper emerald — hover, footer          */
   --primary-light: lightgreen;       /* light emerald — soft accents            */
   --secondary-color: darkslategray;     /* slate — secondary backgrounds           */
