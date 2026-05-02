@@ -4,19 +4,19 @@
      everything on the site updates instantly.
    ======================================== */
 :root {
-  --primary-color: #22c55e;       /* emerald green — buttons, links, badges  */
-  --primary-dark: #16a34a;        /* deeper emerald — hover, footer          */
-  --primary-light: #4ade80;       /* light emerald — soft accents            */
-  --secondary-color: #1e293b;     /* slate — secondary backgrounds           */
-  --accent-color: #f59e0b;        /* amber — sponsored badges, CTA buttons   */
-  --accent-dark: #d97706;         /* darker amber — hover                    */
-  --text-dark: #f1f5f9;           /* near-white — headings                   */
-  --text-mid: #cbd5e1;            /* light slate — body text                 */
-  --text-light: #94a3b8;          /* muted slate — secondary labels          */
-  --bg-white: #1e293b;            /* card / modal background                 */
-  --bg-light: #0f172a;            /* deep section background                 */
-  --bg-warm: #111827;             /* alternate section background            */
-  --border-color: #334155;        /* subtle slate border                     */
+  --primary-color: mediumseagreen;       /* emerald green — buttons, links, badges  */
+  --primary-dark: seagreen;        /* deeper emerald — hover, footer          */
+  --primary-light: lightgreen;       /* light emerald — soft accents            */
+  --secondary-color: darkslategray;     /* slate — secondary backgrounds           */
+  --accent-color: goldenrod;        /* amber — sponsored badges, CTA buttons   */
+  --accent-dark: chocolate;         /* darker amber — hover                    */
+  --text-dark: whitesmoke;           /* near-white — headings                   */
+  --text-mid: lightsteelblue;            /* light slate — body text                 */
+  --text-light: slategray;          /* muted slate — secondary labels          */
+  --bg-white: darkslategray;            /* card / modal background                 */
+  --bg-light: midnightblue;            /* deep section background                 */
+  --bg-warm: midnightblue;             /* alternate section background            */
+  --border-color: darkslategray;        /* subtle slate border                     */
   --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
   --border-radius: 8px;
   --shadow: 0 2px 12px rgba(0,0,0,0.55);
@@ -40,7 +40,7 @@ html {
 body {
   font-family: var(--font-main);
   color: var(--text-dark);
-  background: #0f172a;
+  background: rgb(0, 0, 0);
   line-height: 1.6;
 }
 
@@ -97,7 +97,7 @@ img {
 
 .btn-primary {
   background: var(--primary-color);
-  color: #fff;
+  color: white;
 }
 
 .btn-primary:hover {
@@ -114,12 +114,12 @@ img {
 
 .btn-outline:hover {
   background: var(--primary-color);
-  color: #fff;
+  color: white;
 }
 
 .btn-accent {
   background: var(--accent-color);
-  color: #fff;
+  color: white;
 }
 
 .btn-accent:hover {
@@ -128,12 +128,12 @@ img {
 }
 
 .btn-danger {
-  background: #e53935;
-  color: #fff;
+  background: crimson;
+  color: white;
 }
 
 .btn-danger:hover {
-  background: #b71c1c;
+  background: darkred;
 }
 
 .btn-full {
@@ -150,8 +150,8 @@ img {
    DISCLAIMER BANNER
    ======================================== */
 .disclaimer-banner {
-  background: #060d1a;
-  color: #4ade80;
+  background: midnightblue;
+  color: lightgreen;
   text-align: center;
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -216,7 +216,7 @@ img {
 
 .cart-count {
   background: var(--accent-color);
-  color: #fff;
+  color: white;
   font-size: 0.72rem;
   font-weight: 700;
   border-radius: 50%;
@@ -249,7 +249,7 @@ img {
    HERO SECTION
    ======================================== */
 .hero {
-  background: linear-gradient(135deg, #060d1a 0%, #0c1527 50%, #0a1f18 100%);
+  background: linear-gradient(135deg, midnightblue 0%, midnightblue 50%, darkslategray 100%);
   padding: 100px 20px 80px;
   text-align: center;
   position: relative;
@@ -294,7 +294,7 @@ img {
 .btn-hero-farmers {
   display: inline-block;
   background: var(--accent-color);
-  color: #fff;
+  color: white;
   font-size: 1rem;
   font-weight: 800;
   padding: 14px 32px;
@@ -376,7 +376,7 @@ img {
 .seasonal-badge {
   display: inline-block;
   background: var(--accent-color);
-  color: #fff;
+  color: white;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 2px 8px;
@@ -421,7 +421,7 @@ img {
 
 .pill:hover, .pill.active {
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   border-color: var(--primary-color);
 }
 
@@ -459,7 +459,7 @@ img {
 }
 
 .card-top {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, midnightblue, darkslategray);
   padding: 28px 20px 14px;
   position: relative;
   text-align: center;
@@ -475,7 +475,7 @@ img {
   top: 12px;
   right: 12px;
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 3px 8px;
@@ -660,8 +660,8 @@ img {
    FOOTER
    ======================================== */
 .footer {
-  background: #0a1628;
-  color: #cbd5e1;
+  background: midnightblue;
+  color: lightsteelblue;
   padding: 48px 0 20px;
 }
 
@@ -686,7 +686,7 @@ img {
 
 .footer-brand strong {
   font-size: 1.15rem;
-  color: #fff;
+  color: white;
 }
 
 .footer-brand p {
@@ -702,13 +702,13 @@ img {
 }
 
 .footer-links a {
-  color: #94a3b8;
+  color: slategray;
   font-size: 0.9rem;
   transition: color var(--transition);
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: white;
 }
 
 .footer-bottom {
@@ -716,7 +716,7 @@ img {
   padding-top: 20px;
   font-size: 0.82rem;
   text-align: center;
-  color: #64748b;
+  color: slategray;
 }
 
 /* ========================================
@@ -783,11 +783,11 @@ img {
 
 .disclaimer-box {
   margin: 14px 24px;
-  background: #1c1407;
+  background: black;
   border-left: 4px solid var(--accent-color);
   padding: 10px 14px;
   font-size: 0.85rem;
-  color: #fcd34d;
+  color: gold;
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
@@ -858,7 +858,7 @@ img {
 .remove-btn {
   background: none;
   border: none;
-  color: #e53935;
+  color: crimson;
   font-size: 1.2rem;
   cursor: pointer;
   padding: 4px;
@@ -906,7 +906,7 @@ img {
   height: 72px;
   border-radius: 50%;
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   font-size: 2rem;
   font-weight: 700;
   display: flex;
@@ -963,7 +963,7 @@ img {
   left: 50%;
   transform: translateX(-50%) translateY(80px);
   background: var(--primary-dark);
-  color: #fff;
+  color: white;
   padding: 14px 28px;
   border-radius: 30px;
   font-size: 0.95rem;
@@ -1069,30 +1069,30 @@ img {
 }
 
 .fresh-green {
-  background: #052e16;
-  color: #4ade80;
-  border: 1px solid #166534;
+  background: darkgreen;
+  color: lightgreen;
+  border: 1px solid darkgreen;
 }
 
 .fresh-yellow {
-  background: #1c1407;
-  color: #fbbf24;
-  border: 1px solid #92400e;
+  background: black;
+  color: gold;
+  border: 1px solid sienna;
 }
 
 .fresh-red {
-  background: #1c0a0a;
-  color: #f87171;
-  border: 1px solid #991b1b;
+  background: maroon;
+  color: lightcoral;
+  border: 1px solid darkred;
 }
 
 /* ========================================
    SPONSORED SECTION (now inline inside #products)
    ======================================== */
 .sponsored-inline {
-  background: linear-gradient(135deg, #1c1407 0%, #221a05 100%);
+  background: linear-gradient(135deg, black 0%, black 100%);
   border-radius: 12px;
-  border: 2px solid #78350f;
+  border: 2px solid saddlebrown;
   padding: 32px 28px 28px;
   margin-bottom: 0;
 }
@@ -1118,7 +1118,7 @@ img {
   top: 8px;
   left: 8px;
   background: var(--accent-color);
-  color: #fff;
+  color: white;
   font-size: 0.65rem;
   font-weight: 700;
   padding: 2px 8px 2px 6px;
@@ -1137,14 +1137,14 @@ img {
 }
 
 .is-sponsored {
-  border: 2px solid #fcd34d;
+  border: 2px solid gold;
   box-shadow: 0 4px 18px rgba(245,158,11,0.22);
 }
 
 .season-tag {
   display: inline-block;
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   font-size: 0.7rem;
   font-weight: 700;
   padding: 2px 8px;
@@ -1192,7 +1192,7 @@ img {
    PAGE HERO (inner pages like farmers.html)
    ======================================== */
 .page-hero {
-  background: linear-gradient(135deg, #060d1a, #0c1527);
+  background: linear-gradient(135deg, midnightblue, midnightblue);
   padding: 60px 20px 50px;
   text-align: center;
 }
@@ -1265,7 +1265,7 @@ img {
   min-width: 80px;
   border-radius: 50%;
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   font-size: 2rem;
   font-weight: 700;
   display: flex;
@@ -1384,7 +1384,7 @@ img {
 
 .fp-save {
   background: var(--primary-color);
-  color: #fff;
+  color: white;
   font-size: 0.7rem;
   font-weight: 700;
   padding: 2px 8px;
@@ -1401,10 +1401,10 @@ img {
 /* Disclaimer in farmer profile */
 .fp-disclaimer {
   padding: 12px 28px;
-  background: #1c1407;
-  border-top: 1px solid #78350f;
+  background: black;
+  border-top: 1px solid saddlebrown;
   font-size: 0.82rem;
-  color: #fcd34d;
+  color: gold;
 }
 
 @media (max-width: 600px) {
