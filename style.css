@@ -1,32 +1,198 @@
-/* ========================================
-   CSS VARIABLES — Change colors/fonts here
-   ► To switch theme: edit the values below,
-     everything on the site updates instantly.
-   ======================================== */
+/* ==============================================================
+   HOW TO CHANGE COLORS — READ THIS FIRST
+   ==============================================================
+
+   STEP 1 — Look at the big list below (called ":root").
+            Each line controls one color for the WHOLE SITE.
+            Change the color name on the right side of the colon.
+            Example:  --main-green: limegreen;
+            Change to: --main-green: royalblue;
+            → The whole site becomes blue!
+
+   STEP 2 — Some colors are set directly on a specific element
+            (like the footer or the freshness labels).
+            Those have a comment like:
+            ← CHANGE THIS: what this color controls
+            Just search for "CHANGE THIS" to find them all.
+
+   STEP 3 — Only use color names, NOT hex codes (#xxxxxx).
+            Full list of allowed color names:
+            https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+
+   ============================================================== */
+
+
+/* ==============================================================
+   MAIN COLOR SETTINGS — change colors here to update the whole site
+   ==============================================================
+   These are called "variables". Edit a value here once and
+   it automatically updates everywhere on the site.
+   ============================================================== */
 :root {
-  --primary-color: green;       /* emerald green — buttons, links, badges  */
-  --primary-dark: seagreen;        /* deeper emerald — hover, footer          */
-  --primary-light: lightgreen;       /* light emerald — soft accents            */
-  --secondary-color: darkslategray;     /* slate — secondary backgrounds           */
-  --accent-color: goldenrod;        /* amber — sponsored badges, CTA buttons   */
-  --accent-dark: chocolate;         /* darker amber — hover                    */
-  --text-dark: whitesmoke;           /* near-white — headings                   */
-  --text-mid: lightsteelblue;            /* light slate — body text                 */
-  --text-light: slategray;          /* muted slate — secondary labels          */
-  --bg-white: darkslategray;            /* card / modal background                 */
-  --bg-light: midnightblue;            /* deep section background                 */
-  --bg-warm: midnightblue;             /* alternate section background            */
-  --border-color: darkslategray;        /* subtle slate border                     */
+
+  /* -------------------------------------------------------
+     MAIN GREEN COLOR
+     This is the most important color — it controls:
+     - All main buttons (like "Add to Cart", "Shop Now")
+     - All section titles/headings
+     - Badges and tags (like "Fresh Today", "In Season")
+     - Clickable farmer names
+     - The border stripe on the left of farmer profile cards
+     To change the whole site's main color, only edit THIS line.
+     ------------------------------------------------------- */
+  --primary-color: limegreen;
+
+  /* -------------------------------------------------------
+     DARKER VERSION OF THE MAIN GREEN
+     Used for:
+     - Website name / logo text in the menu bar
+     - Prices on product cards
+     - Farmer names in the farmer popup window
+     - Headings inside popup windows
+     - Headings on contact cards
+     - The +/- quantity button text in the cart
+     ------------------------------------------------------- */
+  --primary-dark: mediumseagreen;
+
+  /* -------------------------------------------------------
+     LIGHTER / SOFTER GREEN
+     Used for:
+     - Soft background accents
+     - The "Fresh" label color (text)
+     ------------------------------------------------------- */
+  --primary-light: palegreen;
+
+  /* -------------------------------------------------------
+     BACKGROUND OF SMALL INNER ELEMENTS
+     Used for:
+     - Background of the freshness tag on product cards
+     - Background of the +/- quantity buttons in the cart
+     - Background of category filter buttons (unselected)
+     ------------------------------------------------------- */
+  --secondary-color: darkolivegreen;
+
+  /* -------------------------------------------------------
+     GOLD / AMBER ACCENT COLOR
+     Used for:
+     - The number badge on the cart icon
+     - The "Sponsored" tag on products
+     - The "In Season" badge on seasonal cards
+     - The gold border on top of seasonal cards
+     - The "View All Farmers" button in the top banner
+     ------------------------------------------------------- */
+  --accent-color: goldenrod;
+
+  /* -------------------------------------------------------
+     DARKER GOLD (for hover states on gold buttons)
+     Used for:
+     - Hover color when you move mouse over gold buttons
+     - Price text in the seasonal section
+     ------------------------------------------------------- */
+  --accent-dark: darkgoldenrod;
+
+  /* -------------------------------------------------------
+     MAIN TEXT COLOR (headings and important text)
+     This should be a LIGHT color because the background is dark.
+     Used for:
+     - Big headings on the top banner
+     - Product names on cards
+     - Farmer name bold text in "Sold by" line
+     - Cart item names
+     - Form input text (what you type)
+     - Total amount text in the cart
+     ------------------------------------------------------- */
+  --text-dark: ivory;
+
+  /* -------------------------------------------------------
+     NORMAL BODY TEXT COLOR
+     Used for:
+     - Paragraph text, descriptions, labels
+     - Nav menu links (before hover)
+     - Form field labels (like "Your Name", "Phone")
+     - "Sold by ..." text on product cards
+     - Farmer details in the popup window
+     - Text on contact cards
+     ------------------------------------------------------- */
+  --text-mid: lightgray;
+
+  /* -------------------------------------------------------
+     MUTED / SMALL TEXT COLOR
+     Used for:
+     - Section sub-headings (the smaller text below the title)
+     - The old/crossed-out price on product cards
+     - The "grown by ..." small text on seasonal cards
+     - Placeholder text inside form fields
+     - The × close button on popup windows
+     - Empty cart message
+     ------------------------------------------------------- */
+  --text-light: darkgray;
+
+  /* -------------------------------------------------------
+     CARD AND MENU BAR BACKGROUND COLOR
+     This is the background of:
+     - The menu bar at the top
+     - All product cards
+     - All popup windows (cart, farmer detail)
+     - The registration form box
+     - Contact cards
+     - The decorative wave between the top banner and cards
+     ------------------------------------------------------- */
+  --bg-white: darkslategray;
+
+  /* -------------------------------------------------------
+     DEEP / DARK SECTION BACKGROUND COLOR
+     Used for:
+     - The "Join as Farmer" section background
+     - The Farmers listing page background
+     - The product sub-section on farmer profile cards
+     ------------------------------------------------------- */
+  --bg-light: black;
+
+  /* -------------------------------------------------------
+     ALTERNATE SECTION BACKGROUND COLOR
+     Used for:
+     - The "In Season Now" section
+     - The "Contact Us" section
+     ------------------------------------------------------- */
+  --bg-warm: darkslategray;
+
+  /* -------------------------------------------------------
+     BORDER / DIVIDER LINE COLOR
+     Used for:
+     - All thin borders around cards
+     - Divider lines inside popup windows
+     - Input field borders
+     ------------------------------------------------------- */
+  --border-color: seagreen;
+
+  /* -------------------------------------------------------
+     FONT (text style)
+     Change this to use a different font on the whole site.
+     Example fonts you can write here:
+     Georgia, serif            → classic serif style
+     'Courier New', monospace  → typewriter style
+     Arial, sans-serif         → simple clean style
+     ------------------------------------------------------- */
   --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* -------------------------------------------------------
+     CORNER ROUNDNESS, SHADOWS, ANIMATION SPEED
+     These control the shape and feel — you rarely need to change these.
+     --border-radius  → how rounded the corners of cards/buttons are
+     --shadow         → the soft shadow under cards (normal)
+     --shadow-hover   → the shadow when you hover over a card
+     --transition     → how fast hover animations happen
+     ------------------------------------------------------- */
   --border-radius: 8px;
   --shadow: 0 2px 12px rgba(0,0,0,0.55);
   --shadow-hover: 0 8px 32px rgba(0,0,0,0.70);
   --transition: 0.25s ease;
 }
 
-/* ========================================
-   RESET & BASE
-   ======================================== */
+
+/* ==============================================================
+   BASIC PAGE SETUP (reset and defaults — no need to change)
+   ============================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -40,7 +206,7 @@ html {
 body {
   font-family: var(--font-main);
   color: var(--text-dark);
-  background: rgb(0, 0, 0);
+  background: black;         /* ← CHANGE THIS: the color of the page background behind all cards */
   line-height: 1.6;
 }
 
@@ -57,9 +223,10 @@ img {
   max-width: 100%;
 }
 
-/* ========================================
-   UTILITIES
-   ======================================== */
+
+/* ==============================================================
+   SECTION TITLES (the big centered heading in each section)
+   ============================================================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -69,21 +236,25 @@ img {
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--primary-color);   /* ← big section heading color — change --primary-color above */
   margin-bottom: 8px;
   text-align: center;
 }
 
 .section-subtitle {
   font-size: 1rem;
-  color: var(--text-light);
+  color: var(--text-light);      /* ← small text below the big heading — change --text-light above */
   text-align: center;
   margin-bottom: 36px;
 }
 
-/* ========================================
+
+/* ==============================================================
    BUTTONS
-   ======================================== */
+   There are 4 types of buttons — each is labeled below.
+   ============================================================== */
+
+/* Base button shape — no color here, just size/shape */
 .btn {
   display: inline-block;
   padding: 12px 26px;
@@ -95,45 +266,45 @@ img {
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
+/* GREEN BUTTON — used for "Add to Cart", "Shop Now" */
 .btn-primary {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* ← green button background — change --primary-color above */
+  color: white;                       /* ← green button text color */
 }
-
 .btn-primary:hover {
-  background: var(--primary-dark);
+  background: var(--primary-dark);   /* ← green button color when mouse hovers — change --primary-dark */
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
 }
 
+/* OUTLINE BUTTON — transparent with a green border, used for secondary actions */
 .btn-outline {
-  background: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  background: transparent;           /* ← no fill, shows background through */
+  color: var(--primary-color);       /* ← outline button text color — change --primary-color above */
+  border: 2px solid var(--primary-color); /* ← outline button border color */
 }
-
 .btn-outline:hover {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* ← outline button fill color on hover */
+  color: white;                       /* ← outline button text color on hover */
 }
 
+/* GOLD BUTTON — used for "View All Farmers" and other highlight actions */
 .btn-accent {
-  background: var(--accent-color);
-  color: white;
+  background: var(--accent-color);   /* ← gold button background — change --accent-color above */
+  color: white;                       /* ← gold button text color */
 }
-
 .btn-accent:hover {
-  background: var(--accent-dark);
+  background: var(--accent-dark);    /* ← gold button hover color — change --accent-dark above */
   transform: translateY(-1px);
 }
 
+/* RED BUTTON — used for "Remove" / delete actions */
 .btn-danger {
-  background: crimson;
-  color: white;
+  background: crimson;               /* ← CHANGE THIS: red/delete button background */
+  color: white;                       /* ← CHANGE THIS: red/delete button text */
 }
-
 .btn-danger:hover {
-  background: darkred;
+  background: darkred;               /* ← CHANGE THIS: red/delete button hover background */
 }
 
 .btn-full {
@@ -146,12 +317,14 @@ img {
   font-size: 0.88rem;
 }
 
-/* ========================================
-   DISCLAIMER BANNER
-   ======================================== */
+
+/* ==============================================================
+   THE THIN COLORED STRIP AT THE VERY TOP OF THE PAGE
+   (shows a warning/info message about the site)
+   ============================================================== */
 .disclaimer-banner {
-  background: midnightblue;
-  color: lightgreen;
+  background: darkgreen;    /* ← CHANGE THIS: top strip background color */
+  color: ivory;              /* ← CHANGE THIS: top strip text color */
   text-align: center;
   padding: 10px 20px;
   font-size: 0.9rem;
@@ -162,11 +335,13 @@ img {
   letter-spacing: 0.01em;
 }
 
-/* ========================================
-   NAVBAR
-   ======================================== */
+
+/* ==============================================================
+   THE MENU BAR AT THE TOP OF THE PAGE
+   (contains the website name, nav links, and cart)
+   ============================================================== */
 .navbar {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* menu bar background — change --bg-white above */
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   position: sticky;
   top: 41px;
@@ -183,10 +358,11 @@ img {
   height: 64px;
 }
 
+/* Website name / logo "Banglar Krishi Bazar" in the menu */
 .nav-logo {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: limegreen;          /* ← CHANGE THIS: website name color in the menu bar */
   display: flex;
   align-items: center;
   gap: 8px;
@@ -196,6 +372,7 @@ img {
   font-size: 1.5rem;
 }
 
+/* The navigation links: Home, Products, Farmers, Contact */
 .nav-links {
   display: flex;
   align-items: center;
@@ -203,7 +380,7 @@ img {
 }
 
 .nav-links a {
-  color: var(--text-mid);
+  color: var(--text-mid);            /* ← menu link text color — change --text-mid above */
   font-weight: 500;
   font-size: 0.95rem;
   transition: color var(--transition);
@@ -211,12 +388,13 @@ img {
 }
 
 .nav-links a:hover {
-  color: var(--primary-color);
+  color: var(--primary-color);       /* ← menu link color when mouse hovers — change --primary-color */
 }
 
+/* The small number badge on the cart icon (e.g. "3") */
 .cart-count {
-  background: var(--accent-color);
-  color: white;
+  background: var(--accent-color);   /* cart badge background — change --accent-color above */
+  color: white;                       /* ← CHANGE THIS: cart number badge text color */
   font-size: 0.72rem;
   font-weight: 700;
   border-radius: 50%;
@@ -225,7 +403,7 @@ img {
   vertical-align: middle;
 }
 
-/* Hamburger (mobile) */
+/* The three-line icon that appears on mobile (hamburger menu) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -240,16 +418,23 @@ img {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--primary-dark);
+  background: limegreen;             /* ← CHANGE THIS: three-line icon color on mobile */
   border-radius: 2px;
   transition: all var(--transition);
 }
 
-/* ========================================
-   HERO SECTION
-   ======================================== */
+
+/* ==============================================================
+   THE BIG PICTURE/BANNER AT THE TOP OF THE HOME PAGE
+   (the section that says "Fresh from the Farm")
+   ============================================================== */
 .hero {
-  background: linear-gradient(135deg, midnightblue 0%, midnightblue 50%, darkslategray 100%);
+  /* This is a gradient — it blends from one color to another */
+  background: linear-gradient(135deg,
+    black 0%,              /* ← CHANGE THIS: banner left/top color */
+    darkslategray 50%,     /* ← CHANGE THIS: banner middle color */
+    darkolivegreen 100%    /* ← CHANGE THIS: banner right/bottom color */
+  );
   padding: 100px 20px 80px;
   text-align: center;
   position: relative;
@@ -263,21 +448,24 @@ img {
   z-index: 1;
 }
 
+/* The biggest heading on the top banner, e.g. "Fresh from the Farm" */
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: var(--text-dark);           /* big heading text on the banner — change --text-dark above */
   margin-bottom: 20px;
 }
 
+/* The highlighted/colored word inside the heading */
 .hero h1 .highlight {
-  color: var(--primary-color);
+  color: var(--primary-color);       /* highlighted word color in the big heading */
 }
 
+/* The paragraph text below the big heading on the banner */
 .hero p {
   font-size: 1.15rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* banner paragraph text color — change --text-mid above */
   margin-bottom: 36px;
   max-width: 520px;
   margin-left: auto;
@@ -291,10 +479,11 @@ img {
   flex-wrap: wrap;
 }
 
+/* The "View All Farmers" button on the top banner */
 .btn-hero-farmers {
   display: inline-block;
-  background: var(--accent-color);
-  color: white;
+  background: var(--accent-color);   /* "View All Farmers" button color — change --accent-color above */
+  color: white;                       /* ← CHANGE THIS: "View All Farmers" button text color */
   font-size: 1rem;
   font-weight: 800;
   padding: 14px 32px;
@@ -303,17 +492,17 @@ img {
   cursor: pointer;
   letter-spacing: 0.02em;
   text-align: center;
-  box-shadow: 0 4px 14px rgba(255,152,0,0.35);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
   transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .btn-hero-farmers:hover {
-  background: var(--accent-dark);
+  background: var(--accent-dark);    /* "View All Farmers" button hover color */
   transform: translateY(-2px);
-  box-shadow: 0 7px 20px rgba(255,152,0,0.45);
+  box-shadow: 0 7px 20px rgba(0,0,0,0.45);
 }
 
-/* Decorative wave */
+/* The curved wave shape at the bottom of the banner */
 .hero::after {
   content: "";
   position: absolute;
@@ -321,15 +510,17 @@ img {
   left: 0;
   right: 0;
   height: 60px;
-  background: var(--bg-white);
+  background: var(--bg-white);       /* wave color should match the card background below */
   clip-path: ellipse(55% 100% at 50% 100%);
 }
 
-/* ========================================
-   SEASONAL SECTION
-   ======================================== */
+
+/* ==============================================================
+   THE "IN SEASON NOW" SECTION
+   (the row of small cards showing seasonal produce)
+   ============================================================== */
 .seasonal {
-  background: var(--bg-warm);
+  background: var(--bg-warm);        /* "In Season" section background — change --bg-warm above */
   padding: 70px 0;
 }
 
@@ -339,13 +530,14 @@ img {
   gap: 20px;
 }
 
+/* Each individual "In Season" small card */
 .seasonal-card {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* seasonal card background — change --bg-white above */
   border-radius: var(--border-radius);
   padding: 20px;
   text-align: center;
   box-shadow: var(--shadow);
-  border-top: 4px solid var(--accent-color);
+  border-top: 4px solid var(--accent-color); /* colored line at the top of each seasonal card */
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -354,29 +546,33 @@ img {
   box-shadow: var(--shadow-hover);
 }
 
+/* The vegetable/fruit name on the seasonal card (e.g. "Tomato") */
 .seasonal-card .s-name {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* item name color on seasonal cards — change --primary-light */
   margin-bottom: 4px;
 }
 
+/* The price on the seasonal card */
 .seasonal-card .s-price {
   font-size: 1.2rem;
-  color: var(--accent-dark);
+  color: var(--accent-color);        /* price color on seasonal cards — change --accent-color */
   font-weight: 700;
 }
 
+/* The "grown by [farmer name]" text on the seasonal card */
 .seasonal-card .s-farmer {
   font-size: 0.82rem;
-  color: var(--text-light);
+  color: var(--text-light);          /* small farmer name text on seasonal cards */
   margin-top: 6px;
 }
 
+/* The "In Season" badge/label on the seasonal card */
 .seasonal-badge {
   display: inline-block;
-  background: var(--accent-color);
-  color: white;
+  background: var(--accent-color);   /* "In Season" badge background — change --accent-color */
+  color: white;                       /* ← CHANGE THIS: "In Season" badge text color */
   font-size: 0.72rem;
   font-weight: 700;
   padding: 2px 8px;
@@ -384,9 +580,11 @@ img {
   margin-bottom: 10px;
 }
 
-/* ========================================
-   FILTER BAR
-   ======================================== */
+
+/* ==============================================================
+   THE CATEGORY FILTER BUTTONS
+   (the row of buttons above products: "All", "Vegetables", etc.)
+   ============================================================== */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -397,7 +595,7 @@ img {
 
 .filter-label {
   font-weight: 600;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* "Filter:" label color — change --text-mid above */
   font-size: 0.9rem;
 }
 
@@ -407,9 +605,10 @@ img {
   gap: 8px;
 }
 
+/* A category button when it is NOT selected */
 .pill {
-  background: var(--secondary-color);
-  color: var(--primary-dark);
+  background: var(--secondary-color); /* unselected category button background */
+  color: ivory;                        /* ← CHANGE THIS: unselected category button text color */
   border: 2px solid var(--border-color);
   border-radius: 20px;
   padding: 5px 16px;
@@ -419,18 +618,21 @@ img {
   transition: all var(--transition);
 }
 
+/* A category button when it IS selected (or hovered) */
 .pill:hover, .pill.active {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* selected category button background */
+  color: white;                       /* ← CHANGE THIS: selected category button text color */
   border-color: var(--primary-color);
 }
 
-/* ========================================
-   PRODUCTS SECTION
-   ======================================== */
+
+/* ==============================================================
+   THE PRODUCTS SECTION
+   (the area showing all product cards)
+   ============================================================== */
 .products {
   padding: 70px 0;
-  background: var(--bg-white);
+  background: var(--bg-white);       /* products section background — change --bg-white above */
 }
 
 .product-grid {
@@ -439,14 +641,16 @@ img {
   gap: 24px;
 }
 
-/* ========================================
-   PRODUCT CARD
-   ======================================== */
+
+/* ==============================================================
+   EACH PRODUCT CARD
+   (the individual box showing one product)
+   ============================================================== */
 .product-card {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* product card background — change --bg-white above */
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border-color); /* thin border around each product card */
   overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition);
   display: flex;
@@ -458,8 +662,12 @@ img {
   box-shadow: var(--shadow-hover);
 }
 
+/* The colored top section of each product card (where the emoji shows) */
 .card-top {
-  background: linear-gradient(135deg, midnightblue, darkslategray);
+  background: linear-gradient(135deg,
+    black 0%,              /* ← CHANGE THIS: product card top-left color */
+    darkolivegreen 100%    /* ← CHANGE THIS: product card top-right color */
+  );
   padding: 28px 20px 14px;
   position: relative;
   text-align: center;
@@ -470,18 +678,20 @@ img {
   line-height: 1;
 }
 
+/* The "X% Savings" small badge in the top-right corner of the card */
 .savings-badge {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* "Savings" badge background — change --primary-color */
+  color: white;                       /* ← CHANGE THIS: "Savings" badge text color */
   font-size: 0.72rem;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 20px;
 }
 
+/* The white/card area below the emoji (product name, price, buttons) */
 .card-body {
   padding: 16px 20px;
   flex: 1;
@@ -490,10 +700,11 @@ img {
   gap: 6px;
 }
 
+/* The product name on the card (e.g. "Tomato") */
 .card-name {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--text-dark);           /* product name text — change --text-dark above */
 }
 
 .card-price-row {
@@ -502,37 +713,42 @@ img {
   gap: 10px;
 }
 
+/* The farmer's price (the main/lower price) */
 .card-price {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--primary-color);       /* price color on product cards — change --primary-color */
 }
 
+/* The old/market price with a strikethrough line */
 .card-market-price {
   font-size: 0.9rem;
-  color: var(--text-light);
+  color: var(--text-light);          /* crossed-out old price color — change --text-light */
   text-decoration: line-through;
 }
 
+/* The small "Fresh Today" / "Picked Yesterday" tag on the card */
 .card-freshness {
   font-size: 0.82rem;
-  color: var(--primary-color);
+  color: var(--primary-light);       /* freshness tag text color — change --primary-light */
   font-weight: 600;
-  background: var(--secondary-color);
+  background: var(--secondary-color); /* freshness tag background — change --secondary-color */
   display: inline-block;
   padding: 2px 8px;
   border-radius: 4px;
 }
 
+/* The "Sold by [Farmer Name]" line */
 .card-farmer {
   font-size: 0.85rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* "Sold by" text color — change --text-mid above */
 }
 
 .card-farmer strong {
-  color: var(--text-dark);
+  color: var(--text-dark);           /* the bold farmer name in "Sold by" */
 }
 
+/* The buttons at the bottom of each product card */
 .card-actions {
   display: flex;
   gap: 8px;
@@ -544,16 +760,18 @@ img {
   flex: 1;
 }
 
-/* ========================================
-   JOIN FORM SECTION
-   ======================================== */
+
+/* ==============================================================
+   THE "JOIN AS A FARMER" REGISTRATION FORM SECTION
+   ============================================================== */
 .join {
-  background: var(--bg-light);
+  background: var(--bg-light);       /* form section background — change --bg-light above */
   padding: 70px 0;
 }
 
+/* The white/card box that contains the form */
 .farmer-form {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* form box background — change --bg-white above */
   border-radius: var(--border-radius);
   padding: 36px;
   box-shadow: var(--shadow);
@@ -574,36 +792,40 @@ img {
   gap: 6px;
 }
 
+/* The label above each input box (e.g. "Your Name", "Phone Number") */
 .form-group label {
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* form field label color — change --text-mid above */
 }
 
+/* The input box, text area, and dropdown in the form */
 .form-group input,
 .form-group textarea,
 .form-group select {
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--border-color); /* input box border — change --border-color above */
   border-radius: var(--border-radius);
   padding: 10px 14px;
   font-size: 0.95rem;
   font-family: var(--font-main);
   transition: border-color var(--transition);
   outline: none;
-  color: var(--text-dark);
-  background: var(--bg-white);
+  color: var(--text-dark);           /* text you type in the input box — change --text-dark */
+  background: var(--bg-white);       /* input box background — change --bg-white above */
 }
 
+/* The light placeholder text inside empty input boxes */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--text-light);
+  color: var(--text-light);          /* placeholder text color — change --text-light above */
   opacity: 1;
 }
 
+/* When a user clicks into an input box to type */
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
+  border-color: var(--primary-color); /* input border color when clicked — change --primary-color */
+  box-shadow: 0 0 0 3px rgba(0,100,0,0.20);
 }
 
 .form-group textarea {
@@ -611,11 +833,12 @@ img {
   min-height: 80px;
 }
 
-/* ========================================
-   CONTACT SECTION
-   ======================================== */
+
+/* ==============================================================
+   THE "CONTACT US" SECTION
+   ============================================================== */
 .contact {
-  background: var(--bg-warm);
+  background: var(--bg-warm);        /* contact section background — change --bg-warm above */
   padding: 70px 0;
 }
 
@@ -626,8 +849,9 @@ img {
   margin-top: 20px;
 }
 
+/* Each contact info card (Phone, Email, Address, etc.) */
 .contact-card {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* contact card background — change --bg-white above */
   border-radius: var(--border-radius);
   padding: 28px;
   text-align: center;
@@ -644,24 +868,27 @@ img {
   margin-bottom: 10px;
 }
 
+/* The heading on each contact card (e.g. "Call Us", "Email Us") */
 .contact-card h3 {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* contact card heading color — change --primary-light above */
   margin-bottom: 6px;
 }
 
+/* The text below the heading on contact cards */
 .contact-card p {
-  color: var(--text-mid);
+  color: var(--text-mid);            /* contact card body text — change --text-mid above */
   font-size: 0.9rem;
 }
 
-/* ========================================
-   FOOTER
-   ======================================== */
+
+/* ==============================================================
+   THE FOOTER (the dark bar at the very bottom of the page)
+   ============================================================== */
 .footer {
-  background: midnightblue;
-  color: lightsteelblue;
+  background: darkgreen;             /* ← CHANGE THIS: footer background color */
+  color: palegreen;                  /* ← CHANGE THIS: footer general text color */
   padding: 48px 0 20px;
 }
 
@@ -684,11 +911,13 @@ img {
   font-size: 1.6rem;
 }
 
+/* The website name in the footer */
 .footer-brand strong {
   font-size: 1.15rem;
-  color: white;
+  color: white;                      /* ← CHANGE THIS: website name color in the footer */
 }
 
+/* The short description text below the name in the footer */
 .footer-brand p {
   font-size: 0.88rem;
   max-width: 280px;
@@ -701,32 +930,38 @@ img {
   gap: 10px;
 }
 
+/* Links in the footer (Home, Products, Farmers, Contact) */
 .footer-links a {
-  color: slategray;
+  color: palegreen;                  /* ← CHANGE THIS: footer link text color */
   font-size: 0.9rem;
   transition: color var(--transition);
 }
 
 .footer-links a:hover {
-  color: white;
+  color: white;                      /* ← CHANGE THIS: footer link color when hovered */
 }
 
+/* The copyright text at the very bottom */
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.10);
   padding-top: 20px;
   font-size: 0.82rem;
   text-align: center;
-  color: slategray;
+  color: palegreen;                  /* ← CHANGE THIS: copyright text color at the bottom */
 }
 
-/* ========================================
-   MODALS
-   ======================================== */
+
+/* ==============================================================
+   POP-UP WINDOWS
+   (the cart window, product detail, and farmer detail popups)
+   ============================================================== */
+
+/* The dark dimmed area behind a popup window */
 .modal-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5);      /* the dark dimmed overlay color behind popups */
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -737,8 +972,9 @@ img {
   display: flex;
 }
 
+/* The actual popup window box */
 .modal {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* popup window background — change --bg-white above */
   border-radius: 12px;
   width: 100%;
   max-width: 520px;
@@ -753,56 +989,64 @@ img {
   to   { transform: translateY(0);    opacity: 1; }
 }
 
+/* The top bar inside the popup window (title + × button) */
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px 16px;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color); /* divider line below popup title */
 }
 
+/* The heading text at the top of a popup window */
 .modal-header h2 {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* popup window heading color — change --primary-light */
 }
 
+/* The × close button in the top-right of a popup */
 .close-btn {
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text-light);
+  color: var(--text-light);          /* × close button color — change --text-light above */
   line-height: 1;
   transition: color var(--transition);
 }
 
 .close-btn:hover {
-  color: var(--text-dark);
+  color: var(--text-dark);           /* × close button hover color */
 }
 
+/* The yellow warning/disclaimer box inside popups */
 .disclaimer-box {
   margin: 14px 24px;
-  background: black;
-  border-left: 4px solid var(--accent-color);
+  background: darkolivegreen;        /* ← CHANGE THIS: warning box background inside popups */
+  border-left: 4px solid var(--accent-color); /* colored left stripe on the warning box */
   padding: 10px 14px;
   font-size: 0.85rem;
-  color: gold;
+  color: gold;                        /* ← CHANGE THIS: warning box text color inside popups */
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-/* Cart modal */
+
+/* ==============================================================
+   INSIDE THE CART POPUP WINDOW
+   ============================================================== */
 .cart-items {
   padding: 8px 24px;
   min-height: 60px;
 }
 
+/* Each item row in the cart */
 .cart-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color); /* divider line between cart items */
   gap: 10px;
 }
 
@@ -814,15 +1058,17 @@ img {
   flex: 1;
 }
 
+/* Product name in the cart */
 .cart-item-name {
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--text-dark);
+  color: var(--text-dark);           /* cart item name color — change --text-dark above */
 }
 
+/* Price of each item in the cart */
 .cart-item-price {
   font-size: 0.85rem;
-  color: var(--primary-color);
+  color: var(--primary-color);       /* cart item price color — change --primary-color above */
   font-weight: 600;
 }
 
@@ -832,8 +1078,9 @@ img {
   gap: 8px;
 }
 
+/* The + and − round buttons that change quantity in the cart */
 .qty-btn {
-  background: var(--secondary-color);
+  background: var(--secondary-color); /* +/− button background — change --secondary-color */
   border: none;
   width: 28px;
   height: 28px;
@@ -841,7 +1088,7 @@ img {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  color: var(--primary-dark);
+  color: ivory;                        /* ← CHANGE THIS: +/− button text color in the cart */
   transition: background var(--transition);
 }
 
@@ -855,10 +1102,11 @@ img {
   text-align: center;
 }
 
+/* The × remove/delete button next to each cart item */
 .remove-btn {
   background: none;
   border: none;
-  color: crimson;
+  color: crimson;                    /* ← CHANGE THIS: remove button color in the cart */
   font-size: 1.2rem;
   cursor: pointer;
   padding: 4px;
@@ -869,15 +1117,17 @@ img {
   transform: scale(1.2);
 }
 
+/* The footer area of the cart popup (total + checkout button) */
 .cart-footer {
   padding: 16px 24px 24px;
   border-top: 1px solid var(--border-color);
 }
 
+/* The "Total: ৳XXX" line in the cart */
 .cart-subtotal {
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--text-dark);           /* cart total amount text — change --text-dark above */
   margin-bottom: 14px;
   display: flex;
   justify-content: space-between;
@@ -889,24 +1139,29 @@ img {
   gap: 10px;
 }
 
+/* Message shown when the cart is empty */
 .empty-cart {
   text-align: center;
   padding: 40px 20px;
-  color: var(--text-light);
+  color: var(--text-light);          /* empty cart message color — change --text-light above */
   font-size: 0.95rem;
 }
 
-/* Farmer modal */
+
+/* ==============================================================
+   INSIDE THE FARMER DETAIL POPUP WINDOW
+   ============================================================== */
 .farmer-card {
   padding: 20px 24px 24px;
 }
 
+/* The round circle with the farmer's initial letter */
 .farmer-avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* farmer initial circle background — change --primary-color */
+  color: white;                       /* ← CHANGE THIS: farmer initial letter color */
   font-size: 2rem;
   font-weight: 700;
   display: flex;
@@ -915,20 +1170,22 @@ img {
   margin: 0 auto 16px;
 }
 
+/* The farmer's name at the top of the popup */
 .farmer-name {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* farmer name in popup — change --primary-light above */
   text-align: center;
   margin-bottom: 16px;
 }
 
+/* Each row of info about the farmer (location, crop, etc.) */
 .farmer-info-row {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
   font-size: 0.9rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* farmer detail text — change --text-mid above */
   align-items: flex-start;
 }
 
@@ -939,13 +1196,14 @@ img {
 }
 
 .farmer-info-row strong {
-  color: var(--text-dark);
+  color: var(--text-dark);           /* bold labels in farmer info — change --text-dark */
 }
 
+/* The farmer's phone number in the popup */
 .farmer-phone {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--primary-color);
+  color: var(--primary-color);       /* farmer phone number color — change --primary-color */
 }
 
 .farmer-separator {
@@ -954,16 +1212,18 @@ img {
   margin: 16px 0;
 }
 
-/* ========================================
-   TOAST NOTIFICATION
-   ======================================== */
+
+/* ==============================================================
+   THE SMALL MESSAGE THAT POPS UP AT THE BOTTOM OF THE SCREEN
+   (shows "Added to cart!" or similar when you click a button)
+   ============================================================== */
 .toast {
   position: fixed;
   bottom: 30px;
   left: 50%;
   transform: translateX(-50%) translateY(80px);
-  background: var(--primary-dark);
-  color: white;
+  background: var(--primary-dark);   /* pop-up message background — change --primary-dark above */
+  color: white;                       /* ← CHANGE THIS: pop-up message text color */
   padding: 14px 28px;
   border-radius: 30px;
   font-size: 0.95rem;
@@ -981,9 +1241,11 @@ img {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ========================================
-   RESPONSIVE — MOBILE
-   ======================================== */
+
+/* ==============================================================
+   MOBILE / SMALL SCREEN LAYOUT CHANGES
+   (only layout adjustments here — no color changes needed)
+   ============================================================== */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -996,7 +1258,7 @@ img {
     top: 64px;
     left: 0;
     right: 0;
-    background: var(--bg-white);
+    background: var(--bg-white);     /* mobile dropdown menu background */
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     padding: 20px;
     gap: 16px;
@@ -1055,9 +1317,12 @@ img {
   }
 }
 
-/* ========================================
-   FRESHNESS LABELS (green / yellow / red)
-   ======================================== */
+
+/* ==============================================================
+   FRESHNESS LABELS ON PRODUCT CARDS
+   Three types: GREEN (very fresh), YELLOW (moderate), RED (old)
+   Change the colors for each type below.
+   ============================================================== */
 .freshness-label {
   display: inline-flex;
   align-items: center;
@@ -1068,31 +1333,39 @@ img {
   border-radius: 20px;
 }
 
+/* GREEN label — shown when produce is very fresh (e.g. "Fresh Today") */
 .fresh-green {
-  background: darkgreen;
-  color: lightgreen;
-  border: 1px solid darkgreen;
+  background: darkgreen;             /* ← CHANGE THIS: "Fresh" label background color */
+  color: palegreen;                  /* ← CHANGE THIS: "Fresh" label text color */
+  border: 1px solid forestgreen;     /* ← CHANGE THIS: "Fresh" label border color */
 }
 
+/* YELLOW label — shown when produce is moderately fresh */
 .fresh-yellow {
-  background: black;
-  color: gold;
-  border: 1px solid sienna;
+  background: darkolivegreen;        /* ← CHANGE THIS: "Moderate" label background color */
+  color: gold;                        /* ← CHANGE THIS: "Moderate" label text color */
+  border: 1px solid olive;           /* ← CHANGE THIS: "Moderate" label border color */
 }
 
+/* RED label — shown when produce is not very fresh */
 .fresh-red {
-  background: maroon;
-  color: lightcoral;
-  border: 1px solid darkred;
+  background: maroon;                /* ← CHANGE THIS: "Old/Red" label background color */
+  color: lightsalmon;                /* ← CHANGE THIS: "Old/Red" label text color */
+  border: 1px solid darkred;         /* ← CHANGE THIS: "Old/Red" label border color */
 }
 
-/* ========================================
-   SPONSORED SECTION (now inline inside #products)
-   ======================================== */
+
+/* ==============================================================
+   THE "SPONSORED PRODUCTS" SECTION
+   (a separate highlighted area for paid/featured products)
+   ============================================================== */
 .sponsored-inline {
-  background: linear-gradient(135deg, black 0%, black 100%);
+  background: linear-gradient(135deg,
+    black 0%,              /* ← CHANGE THIS: sponsored section left background */
+    darkolivegreen 100%    /* ← CHANGE THIS: sponsored section right background */
+  );
   border-radius: 12px;
-  border: 2px solid saddlebrown;
+  border: 2px solid seagreen;        /* ← CHANGE THIS: sponsored section border */
   padding: 32px 28px 28px;
   margin-bottom: 0;
 }
@@ -1101,9 +1374,10 @@ img {
   margin-bottom: 22px;
 }
 
+/* The dashed line that divides regular products from sponsored products */
 .products-divider {
   border: none;
-  border-top: 2px dashed var(--border-color);
+  border-top: 2px dashed var(--border-color); /* dashed divider line between sections */
   margin: 40px 0;
 }
 
@@ -1113,12 +1387,13 @@ img {
   gap: 24px;
 }
 
+/* The small "SPONSORED ★" badge on the top-left of sponsored product cards */
 .sponsored-tag {
   position: absolute;
   top: 8px;
   left: 8px;
-  background: var(--accent-color);
-  color: white;
+  background: var(--accent-color);   /* "Sponsored" badge background — change --accent-color */
+  color: white;                       /* ← CHANGE THIS: "Sponsored" badge text color */
   font-size: 0.65rem;
   font-weight: 700;
   padding: 2px 8px 2px 6px;
@@ -1127,7 +1402,7 @@ img {
   display: flex;
   align-items: center;
   gap: 3px;
-  box-shadow: 0 1px 5px rgba(245,158,11,0.4);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
   z-index: 2;
 }
 
@@ -1136,27 +1411,31 @@ img {
   line-height: 1;
 }
 
+/* The gold-bordered highlight around sponsored product cards */
 .is-sponsored {
-  border: 2px solid gold;
-  box-shadow: 0 4px 18px rgba(245,158,11,0.22);
+  border: 2px solid goldenrod;       /* ← CHANGE THIS: gold border on sponsored product cards */
+  box-shadow: 0 4px 18px rgba(0,0,0,0.22);
 }
 
+/* The small "Season" tag badge on product cards */
 .season-tag {
   display: inline-block;
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* season tag background — change --primary-color above */
+  color: white;                       /* ← CHANGE THIS: season tag text color */
   font-size: 0.7rem;
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 20px;
 }
 
-/* ========================================
-   CLICKABLE SEASONAL CARDS
-   ======================================== */
+
+/* ==============================================================
+   CLICKABLE HINT TEXT ON SEASONAL CARDS
+   (small italic text that appears at the bottom of seasonal cards)
+   ============================================================== */
 .seasonal-hint {
   font-size: 0.75rem;
-  color: var(--primary-color);
+  color: var(--primary-color);       /* hint text color — change --primary-color above */
   margin-top: 6px;
   font-style: italic;
   opacity: 0.8;
@@ -1166,47 +1445,57 @@ img {
   opacity: 1;
 }
 
-/* ========================================
-   FARMER NAME LINK
-   ======================================== */
+
+/* ==============================================================
+   FARMER NAME AS A CLICKABLE LINK (on product cards)
+   ============================================================== */
 .farmer-name-link {
-  color: var(--primary-color);
+  color: var(--primary-color);       /* clickable farmer name color — change --primary-color */
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color var(--transition);
 }
 
 .farmer-name-link:hover {
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* clickable farmer name hover color */
 }
 
-/* ========================================
-   ACTIVE NAV LINK
-   ======================================== */
+
+/* ==============================================================
+   THE CURRENTLY ACTIVE / SELECTED MENU LINK
+   (the link that shows you are on the current page)
+   ============================================================== */
 .nav-active {
-  color: var(--primary-color) !important;
+  color: var(--primary-color) !important; /* active menu link color — change --primary-color */
   font-weight: 700 !important;
 }
 
-/* ========================================
-   PAGE HERO (inner pages like farmers.html)
-   ======================================== */
+
+/* ==============================================================
+   THE BIG PICTURE AREA AT THE TOP OF THE FARMERS PAGE
+   (the banner on farmers.html with the page title)
+   ============================================================== */
 .page-hero {
-  background: linear-gradient(135deg, midnightblue, midnightblue);
+  background: linear-gradient(135deg,
+    black 0%,              /* ← CHANGE THIS: farmers page banner left color */
+    darkslategray 100%     /* ← CHANGE THIS: farmers page banner right color */
+  );
   padding: 60px 20px 50px;
   text-align: center;
 }
 
+/* The main heading on the farmers page banner */
 .page-hero h1 {
   font-size: 2.4rem;
   font-weight: 800;
-  color: var(--text-dark);
+  color: var(--text-dark);           /* farmers page main heading — change --text-dark */
   margin-bottom: 10px;
 }
 
+/* The description paragraph on the farmers page banner */
 .page-hero p {
   font-size: 1.05rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* farmers page paragraph text — change --text-mid */
   max-width: 520px;
   margin: 0 auto;
 }
@@ -1215,12 +1504,13 @@ img {
   margin-bottom: 10px;
 }
 
+/* The big colored tagline text on the farmers page (e.g. "Meet Our Farmers") */
 .page-hero-tagline {
   display: inline-block;
   font-size: 1.55rem;
   font-weight: 900;
   color: var(--primary-color);
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1228,21 +1518,25 @@ img {
   line-height: 1.4;
 }
 
-/* ========================================
-   FARMERS PAGE — PROFILE CARDS
-   ======================================== */
+
+/* ==============================================================
+   THE FARMERS LISTING PAGE (farmers.html)
+   ============================================================== */
+
+/* The background of the entire farmers listing page */
 .farmers-page {
   padding: 60px 0;
-  background: var(--bg-light);
+  background: var(--bg-light);       /* farmers page background — change --bg-light above */
 }
 
+/* Each farmer's big profile card on the farmers page */
 .farmer-profile-card {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* farmer profile card background — change --bg-white */
   border-radius: 12px;
   box-shadow: var(--shadow);
   margin-bottom: 36px;
   overflow: hidden;
-  border-left: 5px solid var(--primary-color);
+  border-left: 5px solid var(--primary-color); /* colored stripe on the left of farmer card */
   transition: box-shadow var(--transition);
 }
 
@@ -1250,7 +1544,7 @@ img {
   box-shadow: var(--shadow-hover);
 }
 
-/* Farmer header area */
+/* The top section of a farmer profile card (avatar + name + info) */
 .fp-header {
   display: flex;
   gap: 24px;
@@ -1259,65 +1553,71 @@ img {
   flex-wrap: wrap;
 }
 
+/* The circular avatar showing the farmer's initial */
 .fp-avatar {
   width: 80px;
   height: 80px;
   min-width: 80px;
   border-radius: 50%;
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* farmer profile avatar circle — change --primary-color */
+  color: white;                       /* ← CHANGE THIS: farmer profile avatar initial letter color */
   font-size: 2rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 10px rgba(22,163,74,0.4);
+  box-shadow: 0 3px 10px rgba(0,100,0,0.4);
 }
 
 .fp-info {
   flex: 1;
 }
 
+/* The farmer's name on their profile card */
 .fp-name {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* farmer name on profile page — change --primary-light */
   margin-bottom: 8px;
 }
 
+/* The small pieces of info under the farmer name (location, experience, etc.) */
 .fp-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   font-size: 0.88rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* farmer small info text — change --text-mid above */
   margin-bottom: 6px;
 }
 
+/* The farmer's phone number on their profile */
 .fp-phone {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--primary-color);       /* farmer phone number color — change --primary-color */
   margin-bottom: 8px;
 }
 
+/* The bio/description paragraph on the farmer's profile */
 .fp-description {
   font-size: 0.92rem;
-  color: var(--text-mid);
+  color: var(--text-mid);            /* farmer bio paragraph — change --text-mid above */
   line-height: 1.6;
 }
 
-/* Farmer's products */
+/* The section showing the farmer's products (below their info) */
 .fp-products {
   border-top: 1px solid var(--border-color);
   padding: 20px 28px;
-  background: var(--bg-light);
+  background: var(--bg-light);       /* farmer's products sub-section background */
 }
 
+/* "Products by this farmer" heading */
 .fp-products-title {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary-light);       /* "Products by this farmer" heading color */
   margin-bottom: 16px;
 }
 
@@ -1327,8 +1627,9 @@ img {
   gap: 16px;
 }
 
+/* Each mini product card in the farmer's product list */
 .fp-product-item {
-  background: var(--bg-white);
+  background: var(--bg-white);       /* mini product card background on farmer page */
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   padding: 16px;
@@ -1357,10 +1658,11 @@ img {
   font-size: 2rem;
 }
 
+/* Product name on the farmer's profile mini card */
 .fp-prod-name {
   font-weight: 700;
   font-size: 1rem;
-  color: var(--text-dark);
+  color: var(--text-dark);           /* product name on farmer page — change --text-dark */
 }
 
 .fp-prod-price {
@@ -1370,21 +1672,24 @@ img {
   flex-wrap: wrap;
 }
 
+/* The selling price on the farmer profile mini card */
 .fp-price {
   font-size: 1.15rem;
   font-weight: 800;
-  color: var(--primary-dark);
+  color: var(--primary-color);       /* price on farmer profile cards — change --primary-color */
 }
 
+/* The crossed-out old price on the farmer profile mini card */
 .fp-market {
   font-size: 0.85rem;
-  color: var(--text-light);
+  color: var(--text-light);          /* crossed-out old price — change --text-light above */
   text-decoration: line-through;
 }
 
+/* The "Save X%" badge on farmer profile mini cards */
 .fp-save {
-  background: var(--primary-color);
-  color: white;
+  background: var(--primary-color);  /* "Save" badge background — change --primary-color */
+  color: white;                       /* ← CHANGE THIS: "Save" badge text */
   font-size: 0.7rem;
   font-weight: 700;
   padding: 2px 8px;
@@ -1398,15 +1703,20 @@ img {
   margin-top: 4px;
 }
 
-/* Disclaimer in farmer profile */
+/* The small disclaimer strip at the bottom of each farmer's profile card */
 .fp-disclaimer {
   padding: 12px 28px;
-  background: black;
-  border-top: 1px solid saddlebrown;
+  background: darkolivegreen;        /* ← CHANGE THIS: disclaimer strip background on farmer profiles */
+  border-top: 1px solid olive;       /* ← CHANGE THIS: disclaimer strip top border */
   font-size: 0.82rem;
-  color: gold;
+  color: palegreen;                   /* ← CHANGE THIS: disclaimer strip text color on farmer profiles */
 }
 
+
+/* ==============================================================
+   MOBILE LAYOUT ADJUSTMENTS FOR FARMERS PAGE
+   (no color changes here — layout only)
+   ============================================================== */
 @media (max-width: 600px) {
   .fp-header {
     flex-direction: column;
